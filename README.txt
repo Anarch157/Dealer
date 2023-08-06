@@ -15,7 +15,7 @@ The following modules needs to be installed manually:
 
 --------------------Change Log--------------------
 
-v1.0 - 22 June 2022:
+v1.0 - 04 June 2022:
        Bot has been deployed
 
 v1.1 - 07 August 2023:
