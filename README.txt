@@ -25,5 +25,5 @@ v1.1 - 07 August 2023:
 
 v2.7 - 21 July 2025:
        Converted to class based bot using cogs
-       Auto delete file after playing
+       Auto delete files on startup and after playing
        Auto leave voice channel after playing
