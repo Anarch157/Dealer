@@ -27,17 +27,23 @@ class Dealer(commands.Bot):
         self.db_path = db_path
         self.queue = {}
         self.ydl_opts = {
-            'format': 'bestaudio/best',
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '192',
-            }],
+            'format': 'bestaudio[ext=webm][acodec=opus]/bestaudio/best',
         }
         self.pending_battles = {}
         self.battle_timers = {}
 
+    async def cleanup_audio_files(self):
+        for file in os.listdir("."):
+            if file.endswith(".mp3") or file.endswith(".webm"):
+                try:
+                    os.remove(file)
+                    print(f"Removed audio file: {file}")
+                except Exception as e:
+                    print(f"Failed to remove {file}: {e}")
+
+
     async def setup_hook(self):
+        await self.cleanup_audio_files()
         self.main_loop = asyncio.get_running_loop()
         await self.init_db()
         await self.add_cog(GamesCog(self))
@@ -579,6 +585,7 @@ class MusicCog(commands.Cog):
         wallet, bank = await self.bot.get_balances(ctx.author.id)
         if wallet < 1000:
             return await ctx.send("You need at least 1000 coins to play a song.")
+        await ctx.send("I receive 1000 coins, you receive your song.")
         await self.bot.update_balances(ctx.author.id, wallet - 1000, bank)
         if not ctx.author.voice:
             return await ctx.send("Join a voice channel first.")
@@ -595,7 +602,7 @@ class MusicCog(commands.Cog):
         with YoutubeDL(self.bot.ydl_opts) as ydl:
             ydl.download([url])
         for file in os.listdir("./"):
-            if video_ids[0] in file and file.endswith(".mp3"):
+            if video_ids[0] in file and file.endswith(".webm"):
                 source = FFmpegPCMAudio(file)
                 source.filepath = file
                 voice = ctx.voice_client
