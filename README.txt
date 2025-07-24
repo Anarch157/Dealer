@@ -40,12 +40,12 @@ v2.4 - 14 June 2025:
        added top feature
 
 v2.5 - 21 June 2025:
-       Added quiz
-       Added wheel of fortune
-
-v2.6 - 24 June 2025:
        Added ping
        Added version in help
+
+v2.6 - 24 June 2025:
+       Added quiz
+       Added wheel of fortune
        
 v2.7 - 21 July 2025:
        Converted to class based bot using cogs
