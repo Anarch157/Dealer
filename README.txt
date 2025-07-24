@@ -7,12 +7,18 @@ A music and mini-games bot for discord written in Python3
 --------------------Dependencies--------------------
 
 The following modules needs to be installed manually:
-  1. FFMPEG (python and os)
-  2. PyNaCl (python)
-  3. discord (python)
-  4. yt_dlp (python)
-  5. aiosqlite
-  6. aiohttp
+  1. FFMPEG (python pip and os)
+  2. PyNaCl (python pip)
+  3. discord (python pip)
+  4. yt_dlp (python pip)
+  5. aiosqlite (python pip)
+  6. aiohttp (python pip)
+
+The directory containing the .py file should have 2 more files:
+  1. config.txt: This file contains 2 lines: first having the 
+     bot token and the next containing the bot owner's discord id.
+  2. db.db: This acts as the database file for the bot, the bot
+     automatically creates this with default values, if not present.
 
 --------------------Change Log--------------------
 
