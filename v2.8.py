@@ -34,7 +34,7 @@ class Dealer(commands.Bot):
 
     async def cleanup_audio_files(self):
         for file in os.listdir("."):
-            if file.endswith(".mp3") or file.endswith(".webm"):
+            if file.endswith(".webm"):
                 try:
                     os.remove(file)
                     print(f"Removed audio file: {file}")
