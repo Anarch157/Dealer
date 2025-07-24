@@ -1,8 +1,8 @@
-AnarchBot
+Dealer
 
 --------------------Description--------------------
 
-A music bot for discord written in Python3
+A music and mini-games bot for discord written in Python3
 
 --------------------Dependencies--------------------
 
@@ -22,3 +22,8 @@ v1.1 - 07 August 2023:
        Added "Stop" functionality
        Added "Queue" feature
        General improvements pertaining to code neatness
+
+v2.7 - 21 July 2025:
+       Converted to class based bot using cogs
+       Auto delete file after playing
+       Auto leave voice channel after playing
