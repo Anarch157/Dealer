@@ -1,4 +1,4 @@
-Dealer
+                      Dealer
 
 --------------------Description--------------------
 
@@ -7,11 +7,12 @@ A music and mini-games bot for discord written in Python3
 --------------------Dependencies--------------------
 
 The following modules needs to be installed manually:
-  1. FFMPEG (python and windows)
+  1. FFMPEG (python and os)
   2. PyNaCl (python)
   3. discord (python)
-  4. discord.ext (python)
-  5. yt_dlp (python)
+  4. yt_dlp (python)
+  5. aiosqlite
+  6. aiohttp
 
 --------------------Change Log--------------------
 
