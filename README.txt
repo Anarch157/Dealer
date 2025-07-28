@@ -63,3 +63,7 @@ v2.7 - 21 July 2025:
 v2.8 - 24 July 2025:
        Auto delete files on startup
        Use opus instead of mp3
+
+v2.9 - 29 July 2025:
+       Removed connect and disconnect
+       Added Whitelist and Blacklist
