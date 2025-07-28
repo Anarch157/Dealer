@@ -70,3 +70,4 @@ v2.9 - 29 July 2025:
 
 v3.0 - 29 July 2025:
        Added NSFW features (hentai, neko, trap, blowjob)
+       Added GitHub link in the help message
