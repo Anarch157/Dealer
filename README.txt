@@ -15,8 +15,10 @@ The following modules needs to be installed manually:
   6. aiohttp (python pip)
 
 The directory containing the .py file should have 2 more files:
-  1. config.txt: This file contains 2 lines: first having the 
-     bot token and the next containing the bot owner's discord id.
+  1. config.txt: This file contains 3 lines: 
+                 1. Discord bot token
+                 2. Discord bot owner's id
+                 3. GitHub url
   2. db.db: This acts as the database file for the bot, the bot
      automatically creates this with default values, if not present.
 
