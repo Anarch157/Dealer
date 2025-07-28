@@ -568,7 +568,7 @@ class NSFWCog(commands.Cog):
                 data = await response.json()
                 return data.get("url")
 
-    async def send_nsfw_embed(self, ctx, category: str, title: str = None):
+    async def send_nsfw_embed(self, ctx, category: str):
         if not ctx.channel.is_nsfw():
             return await ctx.send("❌ This command can only be used in NSFW-marked channels.")
 
@@ -577,54 +577,31 @@ class NSFWCog(commands.Cog):
             return await ctx.send("❌ Failed to fetch image. Try again later.")
 
         embed = discord.Embed(
-            title=title or f"{category.capitalize()} image",
+            title=f"🔞 {category.capitalize()}",
             color=discord.Color.purple()
         )
         embed.set_image(url=image_url)
         await ctx.send(embed=embed)
 
-    @commands.command(name="hentai")
-    @commands.cooldown(1, 3600, commands.BucketType.user)
-    async def hentai(self, ctx):
-        await self.send_nsfw_embed(ctx, "waifu", "🔞 Hentai Waifu")
+    @commands.command(name="nsfw")
+    async def nsfw(self, ctx, category: str = None):
+        valid_categories = ["waifu", "neko", "trap", "blowjob"]
 
-    @hentai.error
-    async def hentai_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-            await ctx.send(f"{ctx.author.mention}, you're on cooldown! Try again in {math.ceil(error.retry_after / 60)} minute(s).")
+        if category is None:
+            return await ctx.send("❗ Usage: `-nsfw <waifu|neko|trap|blowjob>`")
 
+        category = category.lower()
+        if category not in valid_categories:
+            return await ctx.send("❗ Invalid category. Choose from: `waifu`, `neko`, `trap`, `blowjob`")
 
-    @commands.command(name="neko")
-    @commands.cooldown(1, 3600, commands.BucketType.user)
-    async def neko(self, ctx):
-        await self.send_nsfw_embed(ctx, "neko", "🔞 Neko NSFW")
+        wallet, bank = await self.bot.get_balances(ctx.author.id)
+        cost = 5000
+        if wallet < cost:
+            return await ctx.send(f"{ctx.author.mention}, you need at least {cost} coins in your wallet to use this command.")
 
-    @neko.error
-    async def neko_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-            await ctx.send(f"{ctx.author.mention}, you're on cooldown! Try again in {math.ceil(error.retry_after / 60)} minute(s).")
-
-
-    @commands.command(name="trap")
-    @commands.cooldown(1, 3600, commands.BucketType.user)
-    async def trap(self, ctx):
-        await self.send_nsfw_embed(ctx, "trap", "🔞 Femboy / Trap")
-
-    @trap.error
-    async def trap_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-            await ctx.send(f"{ctx.author.mention}, you're on cooldown! Try again in {math.ceil(error.retry_after / 60)} minute(s).")
-
-
-    @commands.command(name="blowjob")
-    @commands.cooldown(1, 3600, commands.BucketType.user)
-    async def blowjob(self, ctx):
-        await self.send_nsfw_embed(ctx, "blowjob", "🔞 Blowjob")
-
-    @blowjob.error
-    async def blowjob_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-            await ctx.send(f"{ctx.author.mention}, you're on cooldown! Try again in {math.ceil(error.retry_after / 60)} minute(s).")
+        await self.bot.update_balances(ctx.author.id, wallet - cost, bank)
+        await ctx.send(f"I receive {cost} coins, you receive {category}")
+        await self.send_nsfw_embed(ctx, category)
 
 
 # ----------------------------------------------------------------- UTILS COG -------------------------------------------------------------
@@ -700,17 +677,14 @@ class UtilsCog(commands.Cog):
 - `-top`: Show top 10 richest users.
 
 **🎵 Music**
-- `-play <song>`: Play from YouTube (costs 1000 coins).
+- `-play <song>`: Play a song from YouTube.
 - `-pause`: Pause playback.
 - `-resume`: Resume playback.
 - `-stop`: Stop and clear playback.
 - `-skip`: Skip the current song.
 
 **🔞 NSFW**
-- `-hentai`: Random hentai waifu image.
-- `-neko`: NSFW neko-themed image.
-- `-trap`: NSFW femboy/trap image.
-- `-blowjob`: NSFW anime-style blowjob image.
+- `-nsfw <waifu|neko|trap|blowjob>`: Shows an hentai image.
 
 **🛠 Utility**
 - `-ping`: Check bot response time.
