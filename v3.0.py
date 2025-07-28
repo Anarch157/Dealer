@@ -23,6 +23,7 @@ class Dealer(commands.Bot):
             lines = f.readlines()
         self.token = lines[0].strip()
         self.owner_id = int(lines[1].strip())
+        self.github = lines[2].strip()
 
         self.db_path = db_path
         self.queue = {}
@@ -681,6 +682,7 @@ class UtilsCog(commands.Cog):
         help_message = f"""
 
 **Dealer {file_name}**
+<{self.bot.github}>
 
 **🎮 Games**
 - `-bal`: View your wallet and bank balances.
