@@ -67,3 +67,6 @@ v2.8 - 24 July 2025:
 v2.9 - 29 July 2025:
        Removed connect and disconnect
        Added Whitelist and Blacklist
+
+v3.0 - 29 July 2025:
+       Added NSFW features (hentai, neko, trap, blowjob)
