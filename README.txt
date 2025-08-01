@@ -73,3 +73,9 @@ v2.9 - 29 July 2025:
 v3.0 - 29 July 2025:
        Added NSFW features (waifu, neko, trap, blowjob)
        Added GitHub link in the help message
+
+v3.1 - 01 August 2025:
+       Fixed bot leaving on skip command
+       Moved setbal comamnd to games cog
+       Used @is_owner instead of manual id check
+       Used embedded msgs for utils and games cogs
