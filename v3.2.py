@@ -749,45 +749,43 @@ class MusicCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    from discord.ui import View, Button
-    from discord import ButtonStyle, Interaction
-
     def get_music_controls(self, ctx):
         view = View(timeout=None)
 
-        async def run_cmd(interaction: Interaction, cmd: str):
-            command = self.bot.get_command(cmd)
-            new_ctx = await self.bot.get_context(interaction.message)
-            new_ctx.author = interaction.user
-            new_ctx.command = command
-            await interaction.response.defer(ephemeral=True)
-            await self.bot.invoke(new_ctx)
+        async def make_ctx(interaction: Interaction):
+            ctx = await self.bot.get_context(interaction.message)
+            ctx.author = interaction.user
+            return ctx
 
-        # Pause button
+
         pause = Button(label="⏸ Pause", style=ButtonStyle.gray)
         async def pause_callback(interaction: Interaction):
-            await run_cmd(interaction, "pause")
+            await interaction.response.defer()
+            await self.pause(await make_ctx(interaction))
         pause.callback = pause_callback
         view.add_item(pause)
 
-        # Resume button
+
         resume = Button(label="▶ Resume", style=ButtonStyle.green)
         async def resume_callback(interaction: Interaction):
-            await run_cmd(interaction, "resume")
+            await interaction.response.defer()
+            await self.resume(await make_ctx(interaction))
         resume.callback = resume_callback
         view.add_item(resume)
 
-        # Skip button
+
         skip = Button(label="⏭ Skip", style=ButtonStyle.blurple)
         async def skip_callback(interaction: Interaction):
-            await run_cmd(interaction, "skip")
+            await interaction.response.defer()
+            await self.skip(await make_ctx(interaction))
         skip.callback = skip_callback
         view.add_item(skip)
 
-        # Stop button
+
         stop = Button(label="⏹ Stop", style=ButtonStyle.red)
         async def stop_callback(interaction: Interaction):
-            await run_cmd(interaction, "stop")
+            await interaction.response.defer()
+            await self.stop(await make_ctx(interaction))
         stop.callback = stop_callback
         view.add_item(stop)
 
