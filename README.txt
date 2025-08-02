@@ -79,3 +79,6 @@ v3.1 - 01 August 2025:
        Moved setbal comamnd to games cog
        Used @is_owner instead of manual id check
        Used embedded msgs for utils and games cogs
+
+v3.2 - 03 August 2025:
+       Added GUI for music control
