@@ -82,3 +82,6 @@ v3.1 - 01 August 2025:
 
 v3.2 - 03 August 2025:
        Added GUI for music control
+
+v3.4 - 04 August 2025:
+       Added restart command for bot and rpi
