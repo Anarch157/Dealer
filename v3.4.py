@@ -221,20 +221,16 @@ class Dealer(discord.Client):
         self.db = await aiosqlite.connect(self.db_path)
         await self.init_db()
 
-        # Global sync (may take up to an hour to update globally)
+        # Global sync
         await self.tree.sync()
+        print("[+] Slash commands synced globally.")
 
-        # Guild sync for immediate effect in a test server
-        GUILD_ID = self.test_guild_id  # replace with your guild ID (int)
-        guild = discord.Object(id=GUILD_ID)
-
-        # Copy global commands to the guild
-        self.tree.copy_global_to(guild=guild)
-
-        # Sync commands specifically in the guild (instant update)
-        await self.tree.sync(guild=guild)
-
-        print("[+] Slash commands synced globally and to guild.")
+        # Guild sync
+#        GUILD_ID = self.test_guild_id
+#        guild = discord.Object(id=GUILD_ID)
+#        self.tree.copy_global_to(guild=guild)
+#        await self.tree.sync(guild=guild)
+#        print("[+] Slash commands synced to guild.")
 
 
     async def close(self):
