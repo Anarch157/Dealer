@@ -17,7 +17,7 @@ The following modules needs to be installed manually:
 The directory containing the .py file should have 2 more files:
   1. config.txt: This file contains 3 lines: 
                  1. Discord bot token
-                 2. Discord bot owner's id
+                 2. Discord test server id
                  3. GitHub url
   2. db.db: This acts as the database file for the bot, the bot
      automatically creates this with default values, if not present.
@@ -91,3 +91,4 @@ v3.4 - 18 August 2025:
        live music streaming instead of download and play
        No need for owner id in config
        Guild sync for faster testing (id in config)
+
