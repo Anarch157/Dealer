@@ -92,4 +92,6 @@ v3.4 - 18 August 2025:
        No need for owner id in config
        Guild sync for faster testing (id in config)
 
+v3.5 - 18 September 2025:
+       Fixed bug related to tossbattle bank balance
 
