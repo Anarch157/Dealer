@@ -104,5 +104,7 @@ v3.5 - 18 September 2025:
 v3.6 - 03 March 2026:
        Removed test guild code
        Added DAVE compatibility
+       Renamed rpi to host
+
 
 
