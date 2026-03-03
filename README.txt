@@ -13,12 +13,17 @@ The following modules needs to be installed manually:
   4. yt_dlp (python pip)
   5. aiosqlite (python pip)
   6. aiohttp (python pip)
+  7. davey (python pip)
+
+Replace the following 3 files from the venv with the ones provided:
+  1. voice_client.py
+  2. voice_state.py
+  3. gateway.py
 
 The directory containing the .py file should have 2 more files:
-  1. config.txt: This file contains 3 lines: 
+  1. config.txt: This file contains 2 lines: 
                  1. Discord bot token
-                 2. Discord test guild id
-                 3. GitHub url
+                 2. Source code url
   2. db.db: This acts as the database file for the bot, the bot
      automatically creates this with default values, if not present.
 
@@ -95,3 +100,6 @@ v3.4 - 18 August 2025:
 v3.5 - 18 September 2025:
        Fixed bug related to tossbattle bank balance
 
+v3.6 - 03 March 2026:
+       Removed test guild code
+       Added DAVE compatibility
