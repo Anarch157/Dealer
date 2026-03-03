@@ -1160,8 +1160,8 @@ async def setbalance(interaction: discord.Interaction, user: discord.Member, wal
 
 # -------------------------------------------------- Command: Restart --------------------------------------------------
 
-@bot.tree.command(name="restart", description="Restart the bot or Raspberry Pi (owner only)")
-@app_commands.describe(target="Choose 'bot' to restart bot or 'rpi' to reboot Raspberry Pi")
+@bot.tree.command(name="restart", description="Restart the bot or host (owner only)")
+@app_commands.describe(target="Choose 'bot' to restart bot or 'host' to reboot the host")
 @owner_only()
 async def restart(interaction: discord.Interaction, target: str):
     await interaction.response.send_message(f"Attempting to restart {target}...")
@@ -1171,12 +1171,12 @@ async def restart(interaction: discord.Interaction, target: str):
             await bot.close()
         except Exception as e:
             print(f"Bot restart failed: {e}")
-    elif target.lower() == "rpi":
+    elif target.lower() == "host":
         try:
             await bot.close()
             os.system("sudo reboot")
         except Exception as e:
-            print(f"RPI reboot failed: {e}")
+            print(f"Host reboot failed: {e}")
 
 
 
