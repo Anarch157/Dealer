@@ -96,6 +96,7 @@ v3.4 - 18 August 2025:
        live music streaming instead of download and play
        No need for owner id in config
        Guild sync for faster testing (id in config)
+       Removed GUI for music control
 
 v3.5 - 18 September 2025:
        Fixed bug related to tossbattle bank balance
@@ -103,4 +104,5 @@ v3.5 - 18 September 2025:
 v3.6 - 03 March 2026:
        Removed test guild code
        Added DAVE compatibility
+
 
