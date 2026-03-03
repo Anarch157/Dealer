@@ -7,7 +7,7 @@ A music and mini-games bot for discord written in Python3
 --------------------Dependencies--------------------
 
 The following modules needs to be installed manually:
-  1. FFMPEG (python pip and os)
+  1. FFMPEG (os)
   2. PyNaCl (python pip)
   3. discord (python pip)
   4. yt_dlp (python pip)
@@ -103,3 +103,4 @@ v3.5 - 18 September 2025:
 v3.6 - 03 March 2026:
        Removed test guild code
        Added DAVE compatibility
+
