@@ -106,5 +106,9 @@ v3.6 - 03 March 2026:
        Added DAVE compatibility
        Renamed rpi to host
 
+v3.7 - 04 March 2026:
+       Added announcement command
+
+
 
 
