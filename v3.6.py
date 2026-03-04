@@ -1242,7 +1242,7 @@ async def help_command(interaction: discord.Interaction):
         f"`/nsfw [waifu|neko|trap|blowjob]` ― NSFW image (NSFW channel only)\n\n"
         f"**🛠 Utility & Admin**\n"
         f"`/ping` ― Ping stats\n"
-        f"`/restart <bot|rpi>` ― Restart/reboot\n"
+        f"`/restart <bot|host>` ― Restart/reboot\n"
         f"`/whitelist @user <cmd>` ― Whitelist user on cmd\n"
         f"`/blacklist @user <cmd>` ― Blacklist user on cmd\n"
         f"`/help` ― Show this help\n"
