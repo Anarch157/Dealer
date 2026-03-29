@@ -15,10 +15,11 @@ The following modules needs to be installed manually:
   6. aiohttp (python pip)
   7. davey (python pip)
 
-Replace the following 3 files from the venv with the ones provided:
+Replace the following 4 files from the venv with the ones provided:
   1. voice_client.py
   2. voice_state.py
   3. gateway.py
+  4. client.py (if default file gives errors)
 
 The directory containing the .py file should have 2 more files:
   1. config.txt: This file contains 2 lines: 
