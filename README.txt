@@ -110,6 +110,13 @@ v3.6 - 03 March 2026:
 v3.7 - 04 March 2026:
        Added announcement command
 
+v4.0 - 30 March 2026:
+       Added youtube playlist support
+       Autodiconnect if paused more than 15 minutes
+       Removed NSFW
+       No coins required to play songs
+       Thumbnails show only when songs start
+
 
 
 
