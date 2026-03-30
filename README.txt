@@ -14,6 +14,7 @@ The following modules needs to be installed manually:
   5. aiosqlite (python pip)
   6. aiohttp (python pip)
   7. davey (python pip)
+  8. deno (os)
 
 Replace the following 4 files from the venv with the ones provided:
   1. voice_client.py
