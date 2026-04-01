@@ -118,6 +118,9 @@ v4.0 - 30 March 2026:
        No coins required to play songs
        Thumbnails show only when songs start
 
-
+v4.1 - 01 Aril 2026
+       Added multiple skip
+       Added message on start
+       Added shuffle queue
 
 
