@@ -237,16 +237,6 @@ class Dealer(discord.Client):
         await self.tree.sync()
         print("[+] Slash commands synced globally.")
 
-
-
-    async def setup_hook(self):
-        self.db = await aiosqlite.connect(self.db_path)
-        await self.init_db()
-
-        # Global sync
-        await self.tree.sync()
-        print("[+] Slash commands synced globally.")
-
     async def on_ready(self):
         print(f"[+] Logged in as {self.user} ({self.user.id})")
 
