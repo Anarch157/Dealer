@@ -123,4 +123,5 @@ v4.1 - 01 Aril 2026
        Added message on start
        Added shuffle queue
 
-
+v4.2 - 12 April 2026
+       Removed all cooldowns except rob and fortune
