@@ -129,3 +129,10 @@ v4.2 - 12 April 2026
 v4.3 - 14 April 2026
        Added Blackjack
        Added Ride the bus
+
+v4.4 - 27 April 2026
+       Balanced all games
+       Added daily games limits
+       Added bet limits
+       Persistent cooldowns
+       Added resetlimits command for owner
