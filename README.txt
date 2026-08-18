@@ -16,18 +16,11 @@ The following modules needs to be installed manually:
   7. davey (python pip)
   8. deno (os)
 
-Replace the following 4 files from the venv with the ones provided:
-  1. voice_client.py
-  2. voice_state.py
-  3. gateway.py
-  4. client.py (if default file gives errors)
-
 The directory containing the .py file should have 2 more files:
-  1. config.txt: This file contains 2 lines: 
-                 1. Discord bot token
-                 2. Source code url
+  1. config.txt: This file includes bot token, source code url and debug channel id.
   2. db.db: This acts as the database file for the bot, the bot
      automatically creates this with default values, if not present.
+  3. cookies.txt: This includes youtube cookies in netscape format.
 
 --------------------Change Log--------------------
 
