@@ -1,0 +1,15 @@
+# ============================================================
+# Dealer Config File
+# ============================================================
+
+[general]
+
+# Discord bot token:
+# token = <Paste your token here and uncomment this line>
+
+# Debug text channel ID:
+# debug_channel = <Paste your debug channel id here and uncomment this line>
+
+# Source code URL:
+# source_code_link = <Paste your source code link here and uncomment this line>
+
