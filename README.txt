@@ -136,3 +136,7 @@ v4.4 - 27 April 2026
        Added bet limits
        Persistent cooldowns
        Added resetlimits command for owner
+
+v4.5 - 18 August 2026
+       Reworked config.txt
+       Added cookie.txt for error 403 
