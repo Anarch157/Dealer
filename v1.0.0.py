@@ -33,12 +33,9 @@ def game_chance_footer_text(used_count: int, extra_text: str = None) -> str:
     return f"{base} | {extra_text}" if extra_text else base
 
 def get_interaction_chances_used(interaction: discord.Interaction):
-    # discord.Interaction is slot-based and cannot accept custom attributes,
-    # so chance metadata is stored on the bot/client instead.
     return getattr(interaction.client, "game_chance_context", {}).get(id(interaction))
 
 def set_game_chance_footer(embed: discord.Embed, source, extra_text: str = None):
-    # `source` can be a discord.Interaction or an active game dict.
     if isinstance(source, dict):
         used_count = source.get("chances_used")
     else:
