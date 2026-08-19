@@ -1,0 +1,7 @@
+# Python pip dependencies from README
+PyNaCl
+discord.py
+yt-dlp
+aiosqlite
+aiohttp
+davey
