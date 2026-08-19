@@ -1,4 +1,4 @@
-                      Dealer
+===================== Dealer =====================
 
 --------------------Description--------------------
 
@@ -21,8 +21,3 @@ The directory containing the .py file should have 2 more files:
   2. db.db: This acts as the database file for the bot, the bot
      automatically creates this with default values, if not present.
   3. cookies.txt: This includes youtube cookies in netscape format.
-
---------------------Change Log--------------------
-
-v1.0.0 - 19 August 2026:
-         First stable version has been released
