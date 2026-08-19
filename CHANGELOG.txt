@@ -115,4 +115,6 @@ v4.4 - 27 April 2026
 v4.5.0 - 18 August 2026
          Reworked config.txt
          Added cookie.txt for error 403
+         Created requirements.txt file
+         Reworked README.txt
          First stable release on github
