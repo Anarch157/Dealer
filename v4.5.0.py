@@ -265,12 +265,12 @@ class Dealer(discord.Client):
 
         config.read("config.txt")
 
-        self.token= host = config.get("general", "token", fallback="no_token")
+        self.token = config.get("general", "token", fallback="no_token")
         self.source_code_link = config.get("general", "source_code_link", fallback="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
         self.debug_channel = config.getint("general", "debug_channel", fallback=0)
 
 
-        self.db_path = db_path
+        self.db_path = "db.db"
 
         self.cooldowns = {}
         self.db = None
@@ -974,7 +974,7 @@ def clear_active_game(user_id):
 
 # -------------------------------------------------- Init Bot --------------------------------------------------
 
-bot = Dealer("config.txt", "db.db")
+bot = Dealer()
 
 # -------------------------------------------------- Command: Balance --------------------------------------------------
 
