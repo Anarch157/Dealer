@@ -3,3 +3,7 @@
 
 v4.5.0 - 18 August 2026
          First stable release on Github
+
+v4.5.1 - 21 August 2026
+         Cleaned up code
+         Updated README.txt
